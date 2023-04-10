@@ -1,0 +1,123 @@
+  *{box-sizing:border-box;}
+  body{font-family: Arial, Helvetica, sans-serif;
+  }
+  .main{
+    padding-bottom: 50px;
+  }
+  .headerContainer{
+    max-width: 900px;/*Limite de largura*/
+    margin: 40px auto;/*40 em cima 40 em baixo e alto nas laterais*/
+  }
+  .container{
+    display: flex;/*deixa os filho um do lado do outro*/
+    max-width: 900px;/*larguta máxima*/
+    margin:auto; /*fica no meio*/
+  }
+  .container .leftSide{
+    flex: 1;/*para deixar do lado do outro*/
+    margin-right: 40px;
+  }
+  .container .leftSide h1{
+    margin:0;
+    font-size:16px;
+    color:#3A4B5C;
+  }
+  .container .leftSide p{
+    font-size: 16px;
+    margin-bottom:40px;
+    color: #6A7D88 ;
+  }
+  .container .leftSide input{
+    width: 100%; 
+    border:0;
+    border-bottom:2px solid rgb(150, 163, 171.5);
+    padding: 10px 2px;/*espaçamento dentro do input, 10px em cima e em baixo e 2 nas laterais*/
+    margin-bottom: 20px;/*para empurrar o campo de baixo para não ficar colado um no outro*/
+    font-size: 14px;
+    outline: 0;/*como uma borda quando vc clica no botão*/
+  }
+  .container .leftSide input:disabled{
+    opacity: .5;
+  }
+  .container .leftSide button{
+    background-color:#227C9D;
+    color: #FFF;
+    font-size: 15px;
+    border:0;
+    border-radius: 10px;
+    padding: 15px 0;
+    width:100%;
+    cursor:pointer;/*Cursos muda quando passa o mouse*/
+    margin-top:40px;
+    transition: all ease .3s;/*Toda essa estilização mudará lentamente em 3s*/
+  }
+  .container .leftSide button:hover{/*efeito quando passa o nome*/
+    opacity: .8;
+  }
+  .container .leftSide button:disabled{/*efeito quando o botão estiver desabilitado*/
+    opacity: .5;
+  }
+  .container .rightSide{
+    flex: 1;/*para deixar do lado do outro*/
+    margin-left: 40px; 
+    display:flex; /*flez dentro dele*/
+  }
+  .container .rightSide .grid{
+    flex:1;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);/*deixa duas colunas*/
+    gap:20px; /*espaço entre um e outro*/
+  }
+  .container .rightSide .rightBig{
+    flex: 1;    /*oculpa toda largura*/
+    display: flex;    /*oculpa toda altura*/
+  }
+  .container .rightSide .rightArrow{
+    /*Deixar a imagem flutuante*/
+    position: absolute;
+    background-color: #227C9D;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;/*deixar a borda redonda*/
+    /*centraliza*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*cursor*/
+    cursor: pointer;
+    /*metade dentro e metade fots*/
+    margin-left: -35px;
+    margin-top: 145px;  
+    /*efeito ao passar o mouse*/
+    transition: all ease .3s;
+  }
+  .container .rightSide .rightArrow:hover{
+    opacity: .8;
+  }
+@media(max-width: 770px){ /*para tablet*/
+  header{/*onde tem a logo*/
+    padding: 0 20px;
+  }
+  .container{
+    padding: 0 20px;
+    flex-direction: column;/*para que as div fique a abaixo da outra*/
+  }
+  .container .leftSide{
+    margin-right:0;
+  }
+  .container .rightSide{
+    margin-left: 0;
+    margin-top: 50px;
+  }
+  .container .rightSide .rightArrow{/*botão voltar*/
+    margin-left:0;
+    margin-top: 0;
+    border-radius:10px
+  }
+}
+
+@media(max-width:430px){/*para celular*/
+  .container .rightSide .grid{
+    grid-template-columns: 1fr;   /*um abaixo do outro*/
+  }
+}
